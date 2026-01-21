@@ -1,13 +1,14 @@
 [project]
 name = "lita-sovereign-engine"
 version = "0.15.0"
-description = "LITA v15: Sovereign logic engine using contextual embedding offsets."
+description = "LITA v15: Sovereign logic engine using Contextual Induction Vector Offsets and Magi Council consensus."
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
     "torch>=2.0.0",
     "transformers>=4.30.0",
     "accelerate>=0.20.0",
+    "sentencepiece",
 ]
 
 [tool.uv]

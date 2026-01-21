@@ -1,21 +1,8 @@
-# Environments
 .venv/
-.python-version
-
-# Python caches
 __pycache__/
 *.py[cod]
-*.class
-
-# AI/ML Specific (Models and large files)
-models/
 .cache/
 hub/
-*.bin
-*.pt
-*.safetensors
-*.ckpt
-
-# OS files
+models/
 .DS_Store
-Thumbs.db
+.python-version
