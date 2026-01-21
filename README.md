@@ -33,4 +33,4 @@ Through **Contextual Induction Vector Offsets**, LITA physically shifts the mode
    ```
 
 ---
-*Developed as part of the "Discrete Sociology" research at Humboldt Universität zu Berlin.*
+*LITA: An exploration of the Post-Symbolic Protocol.*
