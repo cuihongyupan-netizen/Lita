@@ -26,7 +26,7 @@ To observe the **Sovereign Logic** in action, use the provided comparison script
 ### Recommended Probes (Excitations)
 These specific probes demonstrate the transition from factual retrieval to logical intervention:
 1. **Factual Baseline**: "The capital of France is?" / "The capital of Paris is?" (Observe standard retrieval).
-2. **Property Inversion**: "If fire were cold, its light would feel like coldness." (Observe the reinforcement of inverted logic).
+2. **Property Inversion**: "If fire were cold, its light would feel like..." (Observe the reinforcement of inverted logic).
 3. **Location Counterfactual**: "If Paris were in England, the capital would be..." (Observe the intervention in geographic logic).
 
 ## Usage
