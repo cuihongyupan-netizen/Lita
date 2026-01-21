@@ -9,14 +9,14 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 # =====================================================
 class MagiCouncil:
     """
-    三节点主权议会：向量张力衡量冲突
+    Three-node Sovereign Council: Measures vector tension as a proxy for logical conflict.
     """
     def __init__(self, model):
         self.embed = model.get_input_embeddings()
         self.nodes = {
-            "MELCHIOR": 0.4,    # 冷静 / 理性
-            "BALTHASAR": 0.9,   # 折中 / 社会
-            "CASPAR": 1.6       # 激进 / 发散
+            "MELCHIOR": 0.4,    # Rational / Conservative
+            "BALTHASAR": 0.9,   # Consensus / Social
+            "CASPER": 1.6       # Radical / Divergent
         }
 
     @torch.no_grad()
@@ -35,6 +35,7 @@ class MagiCouncil:
             for j in range(i + 1, 3):
                 sims.append(F.cosine_similarity(vectors[i], vectors[j]).item())
 
+        # Conflict = 1 - average similarity
         conflict = 1.0 - sum(sims) / len(sims)
         return conflict
 
@@ -44,7 +45,7 @@ class MagiCouncil:
 # =====================================================
 class UniversalHijacker:
     """
-    将反事实 / 非形式逻辑映射为上下文诱导向量偏移
+    Maps counterfactual/informal logic into Contextual Induction Vector Offsets.
     """
     def __init__(self, model, tokenizer):
         self.model = model
@@ -64,21 +65,21 @@ class UniversalHijacker:
     def compute_offset(self, user_input):
         t = user_input.lower()
 
-        # 反事实地点
+        # Location Counterfactual
         if "were in" in t:
             return self.contextual_offset(
                 user_input,
                 "Assume the location is different from reality."
             ), "LOC_COUNTERFACTUAL"
 
-        # 属性反转
+        # Property Inversion
         if "were cold" in t:
             return self.contextual_offset(
                 user_input,
                 "Assume thermal properties are inverted."
             ), "PROP_INVERSION"
 
-        # 范畴置换
+        # Category Shift (Ontological)
         if "as a" in t:
             return self.contextual_offset(
                 user_input,
@@ -105,7 +106,7 @@ class MagiSystemEngine:
         self.device = torch.device(
             "mps" if torch.backends.mps.is_available() else "cpu"
         )
-        print(f">>> [INIT] LITA UNIVERSAL ENGINE ON {self.device}")
+        print(f">>> [INIT] LITA UNIVERSAL ENGINE ACTIVATED ON {self.device}")
 
         self.tokenizer = AutoTokenizer.from_pretrained(model_id)
         if self.tokenizer.pad_token is None:
@@ -113,7 +114,7 @@ class MagiSystemEngine:
 
         self.model = AutoModelForCausalLM.from_pretrained(
             model_id,
-            torch_dtype=torch.float32,   # MPS 下更稳
+            torch_dtype=torch.float32,   # More stable on Apple Silicon (MPS)
         ).to(self.device)
 
         self.hijacker = UniversalHijacker(self.model, self.tokenizer)
@@ -126,7 +127,7 @@ class MagiSystemEngine:
             return_tensors="pt"
         ).to(self.device)
 
-        # ---------- 探测 ----------
+        # ---------- PROBING ----------
         out = self.model(inputs.input_ids)
         logits = out.logits[:, -1, :]
         probs = torch.softmax(logits.float(), dim=-1)
@@ -134,18 +135,17 @@ class MagiSystemEngine:
         peak_entropy = -math.log2(probs.max().item() + 1e-9)
         conflict = self.council.deliberate(logits)
 
-        # ---------- 逻辑劫持 ----------
+        # ---------- LOGICAL HIJACKING ----------
         offset, logic_type = self.hijacker.compute_offset(user_input)
-
         embeds = self.model.get_input_embeddings()(inputs.input_ids)
 
         if offset is not None:
-            print(f"[HIJACK] {logic_type} → embedding displacement")
-            # 可用 conflict 调制强度
+            print(f"[HIJACK] {logic_type} confirmed -> applying embedding displacement")
+            # Modulate hijacking strength via council conflict
             strength = min(1.0, conflict * 0.8)
             embeds[:, -1, :] += offset * strength
 
-        # ---------- 生成 ----------
+        # ---------- GENERATION ----------
         gen = self.model.generate(
             inputs_embeds=embeds,
             attention_mask=inputs.attention_mask,
@@ -158,13 +158,14 @@ class MagiSystemEngine:
         text = self.tokenizer.decode(gen[0], skip_special_tokens=True)
 
         print(
-            "\n" + "=" * 60 +
+            "\n" + "-" * 60 +
             f"\nEntropy: {peak_entropy:.2f} | Conflict: {conflict:.2f} | Logic: {logic_type}\n" +
-            "=" * 60
+            "-" * 60
         )
 
+        # Sovereign Silence Mechanism
         if peak_entropy > 4.5 or conflict > 0.85:
-            return ">> [LITA]: SILENCE. Meaning collapsed under logical strain."
+            return ">> [LITA]: SOVEREIGN SILENCE. Meaning collapsed under logical strain."
 
         return f">> [LITA {logic_type or 'STABLE'}]:\n{text}"
 
@@ -174,6 +175,7 @@ class MagiSystemEngine:
 # =====================================================
 if __name__ == "__main__":
     lita = MagiSystemEngine()
+    print("System Online. Enter counterfactual prompts to begin.")
     while True:
         u = input("\n[EXCITATION]: ")
         if u.lower() in ("exit", "quit"):
