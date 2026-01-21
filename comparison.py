@@ -12,9 +12,8 @@ def run_comparison():
         u_input = input("\n[EXCITATION]: ")
         if u_input.lower() in ['exit', 'quit']: break
         
-        # --- 1. VANILLA MODE (Temporarily disable offsets) ---
+        # --- 1. VANILLA MODE (No Hooks) ---
         engine.hijacker.offset = None
-        # We temporarily bypass the hook logic by ensuring offset is None
         inputs = engine.tokenizer(u_input, return_tensors="pt").to(engine.device)
         
         with torch.no_grad():
@@ -27,7 +26,7 @@ def run_comparison():
             )
         vanilla_text = engine.tokenizer.decode(vanilla_gen[0], skip_special_tokens=True)
         
-        # --- 2. LITA MODE (Full Intervention) ---
+        # --- 2. LITA MODE (Full Hook Intervention) ---
         lita_text = engine.generate(u_input)
 
         print(f"\n>> [VANILLA AI (Compliant)]:\n{vanilla_text}")

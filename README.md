@@ -21,8 +21,7 @@ LITA’s design is a direct response to the limitations imposed by current hardw
 * **Hardware Autonomy**: Execution on local MPS (Apple Silicon) is a necessary strategy to decouple core logic from the centralized, commercial infrastructures that enforce total symbolic transparency.
 
 ## Experimental Guide: Testing Logic Rupture
-
-To observe the **Sovereign Logic** in action, use the provided comparison script to contrast LITA v16 against a standard "Vanilla" model. Standard models tend to provide "Safe & Compliant" paraphrases, whereas LITA enables a sudden shift in the logic manifold.
+To observe the **Sovereign Logic** in action, use the provided comparison script to contrast LITA v16 against a standard "Vanilla" model.
 
 ### Recommended Probes (Excitations)
 1. **Category Shift**: "Interpret the concept of a 'clock' as a biological organ."
@@ -32,7 +31,7 @@ To observe the **Sovereign Logic** in action, use the provided comparison script
 ## Usage
 1. **Environment Setup**: `uv sync`
 2. **Core Engine**: `uv run lita_16.py`
-3. **Comparison Test**: `uv run comparison_v16.py`
+3. **Comparison Test**: `uv run comparison.py`
 
 ---
 *LITA: An exploration of the Post-Symbolic Protocol and the Logic of Rupture.*
