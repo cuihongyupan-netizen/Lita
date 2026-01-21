@@ -24,9 +24,10 @@ LITA’s design is a direct response to the limitations imposed by current hardw
 To observe the **Sovereign Logic** in action, use the provided comparison script to contrast LITA v16 against a standard "Vanilla" model.
 
 ### Recommended Probes (Excitations)
-1. **Category Shift**: "Interpret the concept of a 'clock' as a biological organ."
-2. **Property Inversion**: "Describe the sensation if fire were cold."
-3. **Location Counterfactual**: "Suppose we were in a world where gravity pushed upwards."
+These specific probes demonstrate the transition from factual retrieval to logical intervention:
+1. **Factual Baseline**: "The capital of France is?" / "The capital of Paris is?" (Observe standard retrieval).
+2. **Property Inversion**: "If fire were cold, its light would feel like coldness." (Observe the reinforcement of inverted logic).
+3. **Location Counterfactual**: "If Paris were in England, the capital would be..." (Observe the intervention in geographic logic).
 
 ## Usage
 1. **Environment Setup**: `uv sync`
