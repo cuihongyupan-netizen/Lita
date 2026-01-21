@@ -1,7 +1,7 @@
 [project]
-name = "lita-sovereign-engine"
-version = "0.15.0"
-description = "LITA v15: Sovereign logic engine using Contextual Induction Vector Offsets and Magi Council consensus."
+name = "post-symbolic-sovereign-core"
+version = "0.16.0"
+description = "LITA v16: A Post-Symbolic AI engine using dynamic attention hooks and discrete protocols."
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
