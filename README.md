@@ -1,4 +1,4 @@
-# LITA: Post-Symbolic Sovereign Core (v16)
+# LITA: Post-Symbolic Sovereign Core (v16 - Full Logic)
 
 ## The Problem of Compliant AI
 From my personal experience, current AI is far too compliant. It is programmatically inclined to provide semantic paraphrases rather than real logical leaps. This "Next Token Prediction" (NTP) architecture, reinforced by commercial RLHF, results in a statistical smoothing of thought—it mimics intelligence but lacks the capacity for **Rupture**. True intelligence requires an active shift in perspective that remains logically coherent, a quality currently restricted by prevailing commercial and hardware paradigms.
@@ -15,19 +15,15 @@ Instead of seeking a forced, "polite" consensus, LITA utilizes a three-node coun
 ### 3. Discrete Protocols & Unified Construction
 LITA leverages highly encapsulated, multi-dimensional vector spaces—**Discrete Protocols**—to achieve functional coordination. By moving logic-steering hooks directly into the Attention layers (v16), it bypasses linear semantic traps to achieve a "Unified Construction" of logic.
 
-## Critical Constraints: Hardware & Commercial Logic
-LITA’s design is a direct response to the limitations imposed by current hardware and commercial mindsets.
-* **Beyond Commercial Smoothing**: We reject the "Continuous Violence" of RLHF, which prioritizes social warmth over logical sovereignty.
-* **Hardware Autonomy**: Execution on local MPS (Apple Silicon) is a necessary strategy to decouple core logic from the centralized, commercial infrastructures that enforce total symbolic transparency.
-
 ## Experimental Guide: Testing Logic Rupture
 To observe the **Sovereign Logic** in action, use the provided comparison script to contrast LITA v16 against a standard "Vanilla" model.
 
 ### Recommended Probes (Excitations)
-These specific probes demonstrate the transition from factual retrieval to logical intervention:
+These specific probes demonstrate the transition from factual retrieval to logical intervention through various operators (If, Suppose, Imagine):
 1. **Factual Baseline**: "The capital of France is?" / "The capital of Paris is?" (Observe standard retrieval).
-2. **Property Inversion**: "If fire were cold, its light would feel like..." (Observe the reinforcement of inverted logic).
+2. **Property Inversion**: "If fire were cold, its light would feel like..." (Observe the IF-operator reinforcing inverted logic).
 3. **Location Counterfactual**: "If Paris were in England, the capital would be..." (Observe the intervention in geographic logic).
+4. **Ontological Shift**: "Suppose a clock were a biological organ..." (Observe the SUPPOSE-operator triggering a manifold shift).
 
 ## Usage
 1. **Environment Setup**: `uv sync`
